@@ -28,47 +28,7 @@ public class Order {
 	private String address;
 	private int totalAmount;
 	@OneToMany
-	@JoinColumn(name = "product_class_id")
+	@JoinColumn(name = "OrderId")
 	private List<Product> productId;
-
-//	public int getId() {
-//		return id;
-//	}
-//
-//	public void setId(int id) {
-//		this.id = id;
-//	}
-//
-//	public String getOrderNumber() {
-//		return orderNumber;
-//	}
-//
-//	public void setOrderNumber(String orderNumber) {
-//		this.orderNumber = orderNumber;
-//	}
-//
-//	public String getAddress() {
-//		return address;
-//	}
-//
-//	public void setAddress(String address) {
-//		this.address = address;
-//	}
-//
-//	public int getTotalAmount() {
-//		return totalAmount;
-//	}
-//
-//	public void setTotalAmount(int totalAmount) {
-//		this.totalAmount = totalAmount;
-//	}
-//
-//	public List<Product> getProducts() {
-//		return products;
-//	}
-//
-//	public void setProducts(List<Product> products) {
-//		this.products = products;
-//	}
 
 }
