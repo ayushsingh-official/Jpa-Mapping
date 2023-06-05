@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -27,7 +27,7 @@ public class Order {
 	private String orderNumber;
 	private String address;
 	private int totalAmount;
-	@OneToMany
+	@ManyToMany
 	@JoinColumn(name = "OrderId")
 	private List<Product> productId;
 

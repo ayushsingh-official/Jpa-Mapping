@@ -12,6 +12,12 @@ import javax.persistence.Table;
 
 import lombok.Data;
 
+
+/**
+ * 
+ * @author ayush.singh
+ * 
+ **/
 @Entity(name = "mst_customer")
 @Table
 @Data
