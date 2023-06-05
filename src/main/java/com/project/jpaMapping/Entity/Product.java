@@ -26,8 +26,8 @@ public class Product {
 	private String category;
 	private String price;
 
-	@ManyToOne
-	@JoinColumn(name = "productId")
-	private Order order;
+//	@ManyToOne
+//	@JoinColumn(name = "productId")
+//	private Order order;
 
 }
