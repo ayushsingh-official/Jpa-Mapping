@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.project.jpaMapping.Entity.Customer;
 import com.project.jpaMapping.Entity.Product;
+import com.project.jpaMapping.repository.CustomerRepository;
 import com.project.jpaMapping.repository.ProductRepository;
 
 @SpringBootApplication
@@ -14,6 +15,9 @@ public class JpaMappingApplication implements CommandLineRunner {
 
 	@Autowired
 	ProductRepository productRepository;
+
+	@Autowired
+	CustomerRepository customerRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(JpaMappingApplication.class, args);
@@ -24,6 +28,12 @@ public class JpaMappingApplication implements CommandLineRunner {
 		// TODO Auto-generated method stub
 
 		Customer customer1 = new Customer();
+		customer1.setName("John");
+		customer1.setAge(30);
+		customer1.setEmail("john@gmail.com");
+		
+//		Order order1 = new Order();
+//		order1.set
 
 		Product product1 = new Product();
 		product1.setName("Shampoo");
@@ -36,6 +46,8 @@ public class JpaMappingApplication implements CommandLineRunner {
 		product2.setPrice("70");
 
 		Product prodObj = productRepository.save(product1);
+
+		Customer customerObjCustomer = customerRepository.save(customer1);
 
 //		Order order1 = new Order();
 //		order1.setOrderNumber("001");
