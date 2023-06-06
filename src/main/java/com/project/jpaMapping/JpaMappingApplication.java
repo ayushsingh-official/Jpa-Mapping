@@ -1,14 +1,19 @@
 package com.project.jpaMapping;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.project.jpaMapping.Entity.Customer;
 import com.project.jpaMapping.Entity.Product;
+import com.project.jpaMapping.repository.ProductRepository;
 
 @SpringBootApplication
 public class JpaMappingApplication implements CommandLineRunner {
+
+	@Autowired
+	ProductRepository productRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(JpaMappingApplication.class, args);
@@ -29,6 +34,8 @@ public class JpaMappingApplication implements CommandLineRunner {
 		product2.setName("Dish Wash");
 		product2.setCategory("FMCG");
 		product2.setPrice("70");
+
+		Product prodObj = productRepository.save(product1);
 
 //		Order order1 = new Order();
 //		order1.setOrderNumber("001");
