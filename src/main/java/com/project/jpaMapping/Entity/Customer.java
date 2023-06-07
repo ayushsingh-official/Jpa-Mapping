@@ -1,5 +1,6 @@
 package com.project.jpaMapping.Entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -11,7 +12,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
-
 
 /**
  * 
@@ -31,6 +31,6 @@ public class Customer {
 	private String email;
 	@OneToMany
 	@JoinColumn(name = "CustomerId")
-	private List<Order> orders;
+	private List<Order> orders = new ArrayList<>();
 
 }
