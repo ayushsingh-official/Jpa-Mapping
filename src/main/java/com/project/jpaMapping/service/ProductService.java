@@ -1,5 +1,5 @@
 package com.project.jpaMapping.service;
 
-public class ProductRepository {
+public class ProductService {
 
 }
