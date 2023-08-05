@@ -1,33 +1,30 @@
 package com.project.jpaMapping;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.project.jpaMapping.repository.CustomerRepository;
-import com.project.jpaMapping.repository.OrderRepository;
-import com.project.jpaMapping.repository.ProductRepository;
-
 @SpringBootApplication
-public class JpaMappingApplication implements CommandLineRunner {
+public class JpaMappingApplication {
 
 	@Autowired
-	ProductRepository productRepository;
-
-	@Autowired
-	CustomerRepository customerRepository;
-
-	@Autowired
-	OrderRepository orderRepository;
+//	ProductRepository productRepository;
+//
+//	@Autowired
+//	CustomerRepository customerRepository;
+//
+//	@Autowired
+//	OrderRepository orderRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(JpaMappingApplication.class, args);
 	}
 
-	@Override
-	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
+//	private Logger logger = LoggerFactory.getLogger(JpaMappingApplication.class);
+
+//	@Override
+//	public void run(String... args) throws Exception {
+	// TODO Auto-generated method stub
 
 //		Product product1 = new Product();
 //		product1.setName("Shampoo");
@@ -46,6 +43,7 @@ public class JpaMappingApplication implements CommandLineRunner {
 //		order1.setAddress("Madivala , Bangalore");
 //		order1.setTotalAmount(200);
 //
+
 //		ArrayList<Product> productList = new ArrayList<>();
 //		productList.add(product1);
 //		order1.setProductId(productList);
@@ -59,16 +57,24 @@ public class JpaMappingApplication implements CommandLineRunner {
 //
 //		ArrayList<Order> OrderList = new ArrayList<>();
 //		OrderList.add(orderRepository.findById(1).get());
-//		customer1.setOrders(OrderList);
+//		customer1.setOrders(order1);;
 
 //		Customer customerObj = customerRepository.save(customer1);
 
+//		Customer customerObj = customerRepository.getReferenceById(1);
+//
+//		Order orderObj = orderRepository.getReferenceById(1);
+//
+//		Customer cust = orderObj.getCustomer();
+
+//		logger.info("customer {},{}", customerObj.getName(),customerObj.getOrders());
+
 //		Optional<Product> productOptional = productRepository.findById(1);
-//		
-//		System.out.println("Product : " + productOptional.get());
+
+//		System.out.println("customerObj : ");
 
 //		customerRepository.deleteById(11);
 
-	}
+//	}
 
 }

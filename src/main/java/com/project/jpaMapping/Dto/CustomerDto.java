@@ -1,5 +1,7 @@
-package com.project.jpaMapping.Request;
+package com.project.jpaMapping.Dto;
 
 public class CustomerDto {
+	
+	
 
 }

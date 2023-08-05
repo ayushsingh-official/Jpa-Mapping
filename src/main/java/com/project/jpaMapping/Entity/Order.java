@@ -1,34 +1,45 @@
 package com.project.jpaMapping.Entity;
 
-import java.util.List;
+import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "mst_order")
-@Table
+/**
+ * 
+ * 
+ * 
+ */
+
+@Entity
+@Table(name = "order")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Order {
+public class Order implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String orderNumber;
 	private String address;
 	private int totalAmount;
-	@ManyToMany
-	@JoinColumn(name = "OrderId")
-	private List<Product> productId;
+
+
+	@OneToOne
+//	@JoinColumn(name = "customer_id ")
+	private Customer customer;
+
 
 }

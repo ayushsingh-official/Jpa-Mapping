@@ -1,5 +1,7 @@
 package com.project.jpaMapping.Entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,13 +14,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "mst_product")
-@Table
+@Entity
+@Table(name = "product")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
+public class Product implements Serializable{
 
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -26,8 +29,8 @@ public class Product {
 	private String category;
 	private String price;
 
-	@ManyToOne
-	@JoinColumn(name = "productId")
-	private Order order;
-
+//	@ManyToOne
+//	@JoinColumn(name = "productId")
+//	private Order order;
+//	
 }
