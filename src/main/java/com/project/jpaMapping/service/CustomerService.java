@@ -9,12 +9,9 @@ import com.project.jpaMapping.repository.CustomerRepository;
 @Service
 public class CustomerService {
 
-	// CRUD
-
 	@Autowired
 	private CustomerRepository customerRepository;
 
-	
 	public void save(Customer customer) {
 
 		customerRepository.save(customer);
@@ -22,10 +19,10 @@ public class CustomerService {
 	}
 
 	public Customer getCustomer(int id) {
-		
+
 		Customer customer = customerRepository.getReferenceById(id);
-		
+
 		return customer;
 	}
-	
+
 }

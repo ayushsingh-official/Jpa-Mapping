@@ -2,24 +2,14 @@ package com.project.jpaMapping.Entity;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-/**
- * 
- * 
- * 
- */
 
 @Entity
 @Table(name = "order")
@@ -29,6 +19,7 @@ import lombok.NoArgsConstructor;
 public class Order implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -36,10 +27,8 @@ public class Order implements Serializable {
 	private String address;
 	private int totalAmount;
 
-
-	@OneToOne
+//	@OneToOne
 //	@JoinColumn(name = "customer_id ")
-	private Customer customer;
-
+//	private Customer customer;
 
 }

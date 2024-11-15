@@ -1,13 +1,10 @@
 package com.project.jpaMapping;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class JpaMappingApplication {
-
-	@Autowired
 //	ProductRepository productRepository;
 //
 //	@Autowired
@@ -17,7 +14,9 @@ public class JpaMappingApplication {
 //	OrderRepository orderRepository;
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(JpaMappingApplication.class, args);
+
 	}
 
 //	private Logger logger = LoggerFactory.getLogger(JpaMappingApplication.class);
@@ -42,7 +41,6 @@ public class JpaMappingApplication {
 //		order1.setOrderNumber("002");
 //		order1.setAddress("Madivala , Bangalore");
 //		order1.setTotalAmount(200);
-//
 
 //		ArrayList<Product> productList = new ArrayList<>();
 //		productList.add(product1);
