@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,6 +15,8 @@ import com.project.jpaMapping.Dto.CustomerDto;
 import com.project.jpaMapping.Entity.Customer;
 import com.project.jpaMapping.service.CustomerService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/customers")
 public class CustomerController {
@@ -24,7 +25,7 @@ public class CustomerController {
 	private CustomerService customerService;
 
 	@PostMapping("/addCustomer")
-	public Customer addCustomer(@RequestBody Customer customer) {
+	public Customer addCustomer(@Valid @RequestBody Customer customer) {
 
 		customerService.save(customer);
 
@@ -32,7 +33,7 @@ public class CustomerController {
 	}
 
 	@PutMapping("/updateCustomer/{id}")
-	public Customer updateCustomer(@PathVariable int id, @RequestBody Customer customer) {
+	public Customer updateCustomer(@RequestBody Customer customer) {
 
 		customerService.save(customer);
 
@@ -40,7 +41,7 @@ public class CustomerController {
 	}
 
 	@GetMapping("/getCustomer")
-	public ResponseEntity<CustomerDto> getCustomer(@RequestParam int id) {
+	public ResponseEntity<CustomerDto> getCustomer(@RequestParam(required = false) Integer id) {
 
 		Customer customer = customerService.getCustomer(id);
 
@@ -48,13 +49,6 @@ public class CustomerController {
 
 		return new ResponseEntity<CustomerDto>(dto, HttpStatus.OK);
 
-	}
-
-	// testing
-	@GetMapping("/")
-	public String get() {
-
-		return " JPA project ";
 	}
 
 }

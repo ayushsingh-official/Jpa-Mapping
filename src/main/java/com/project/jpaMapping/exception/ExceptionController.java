@@ -18,8 +18,13 @@ public class ExceptionController extends ResponseEntityExceptionHandler {
 	@ExceptionHandler(EntityNotFoundException.class)
 	public ResponseEntity<?> entityNotFound(EntityNotFoundException ex) {
 
-		return new ResponseEntity<String>("Entity not found in DB, please use a valid request paramters",
-				HttpStatus.NOT_FOUND);
+		return new ResponseEntity<String>(ex.getMessage() + "  Not available in DB ", HttpStatus.NOT_FOUND);
+	}
+
+	@ExceptionHandler(NullPointerException.class)
+	public ResponseEntity<?> nullPointerException(NullPointerException ex) {
+
+		return new ResponseEntity<>(ex.getMessage() + " ", HttpStatus.NOT_FOUND);
 	}
 
 	@ExceptionHandler(Exception.class)
