@@ -1,6 +1,9 @@
 package com.project.jpaMapping.Entity;
 
 import java.io.Serializable;
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,6 +29,9 @@ public class Order implements Serializable {
 	private String orderNumber;
 	private String address;
 	private int totalAmount;
+
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private Date orderDate;
 
 //	@OneToOne
 //	@JoinColumn(name = "customer_id ")
